@@ -9,6 +9,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def figure_size(size = 'column'):
+    '''
+    Takes size in pt or column/page as arguments
+
+    outputs: figure size dimensions
+    '''
 
     if size == 'column':
         size = 244.0
@@ -18,7 +23,7 @@ def figure_size(size = 'column'):
     plt.rc('text', usetex=True)
     plt.rc('font', family='serif')
     
-    fig_width_pt = size  # Get this from LaTeX using \showthe\columnwidth
+    fig_width_pt = size  # Get this from LaTeX using \the\columnwidth
     
     inches_per_pt = 1.0/72.27               # Convert pt to inches
     
@@ -31,14 +36,3 @@ def figure_size(size = 'column'):
     fig_size = [fig_width,fig_height]
     
     return fig_size
-
-# x = np.linspace(0,1,101)
-
-# fig_size = figure_size()
-
-# plt.figure(figsize = fig_size)
-# plt.plot(x,x)
-# # plt.savefig('TEST.pdf', dpi = 1200, bbox_inches='tight' )
-# plt.show()
-
-# print((time.time()-start)/60)
